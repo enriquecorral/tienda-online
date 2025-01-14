@@ -1,10 +1,10 @@
-import Header from "./components/Header";
+import Main from "./views/Main";
 import "./App.css";
 
 function App() {
   return (
-    <div id="main-page">
-      <Header />
+    <div>
+      <Main />
     </div>
   );
 }
