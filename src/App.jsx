@@ -1,12 +1,8 @@
-import Main from "./views/Main";
 import "./App.css";
+import Routes from "./Routes";
 
 function App() {
-  return (
-    <div>
-      <Main />
-    </div>
-  );
+  return <Routes />;
 }
 
 export default App;
