@@ -49,9 +49,15 @@ function Header() {
       {/* Ícono del carrito a la derecha */}
       <section className="header__section header__section--cart">
         <div className="header__cart-container">
+          <button
+            className="header__returns-button"
+            onClick={() => navigate("/returns")}
+          >
+            Devoluciones
+          </button>
           <div
-            onClick={() => navigate("/search/")}
-            style={{ display: "contents" }}
+            onClick={() => navigate("/cart/")}
+            className="header__cart-button"
           >
             <Icon path={mdiCartOutline} size={1.2} />
           </div>
