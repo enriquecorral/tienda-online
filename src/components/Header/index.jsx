@@ -1,17 +1,26 @@
+import { useState } from "react";
+import { useNavigate } from "react-router";
 import Icon from "@mdi/react";
 import { mdiStorefrontOutline, mdiCartOutline, mdiMagnify } from "@mdi/js";
 import "./Header.css";
 
 function Header() {
+  const navigate = useNavigate();
+  const [searchText, setSearchText] = useState("");
+
+  const handleSearch = () => {
+    if (searchText.trim()) {
+      const encodedSearch = encodeURIComponent(searchText);
+      navigate(`/search?query=${encodedSearch}`);
+    }
+  };
+
   return (
     <header className="header">
       {/* Logo a la izquierda */}
       <section className="header__section header__section--logo">
         <div className="header__logo-container">
-          <div
-            onClick={() => console.log("Home clicked")}
-            style={{ display: "contents" }}
-          >
+          <div onClick={() => navigate("/")} style={{ display: "contents" }}>
             <Icon path={mdiStorefrontOutline} size={1.2} />
           </div>
         </div>
@@ -25,8 +34,13 @@ function Header() {
             type="text"
             placeholder="Search.."
             name="search"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
           />
-          <button className="header__search-button">
+          <button
+            className="header__search-button"
+            onClick={() => handleSearch()}
+          >
             <Icon path={mdiMagnify} size={1} color="gray" />
           </button>
         </div>
@@ -36,7 +50,7 @@ function Header() {
       <section className="header__section header__section--cart">
         <div className="header__cart-container">
           <div
-            onClick={() => console.log("Cart clicked")}
+            onClick={() => navigate("/search/")}
             style={{ display: "contents" }}
           >
             <Icon path={mdiCartOutline} size={1.2} />
