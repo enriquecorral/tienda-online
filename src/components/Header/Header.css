@@ -25,6 +25,8 @@
 /* Returns */
 
 .header__returns-button {
+  position: absolute;
+  right: 60px;
   background: none;
   border: none;
   color: white;
