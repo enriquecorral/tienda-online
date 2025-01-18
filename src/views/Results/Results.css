@@ -1,14 +1,4 @@
 /* Estilo general del contenedor de resultados */
-.results {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.results__container {
-  max-width: 1000px;
-  width: 100%;
-}
 
 .results__content {
   display: flex;

@@ -6,6 +6,7 @@ const CartContext = createContext({});
 // Proveedor del contexto
 const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [purchasedItems, setPurchasedItems] = useState([]);
 
   const addToCart = (product, quantity) => {
     setCartItems((prevItems) => {
@@ -43,14 +44,30 @@ const CartProvider = ({ children }) => {
     );
   };
 
+  const checkout = () => {
+    setPurchasedItems([...purchasedItems, ...cartItems]);
+    setCartItems([]);
+  };
+
+  const returnProduct = (id) => {
+    const returnedItem = purchasedItems.find((item) => item.id === id);
+    setPurchasedItems((prevItems) =>
+      prevItems.filter((item) => item.id !== id)
+    );
+    setCartItems((prevItems) => [...prevItems, returnedItem]);
+  };
+
   return (
     <CartContext.Provider
       value={{
         cartItems,
+        purchasedItems,
         addToCart,
         removeFromCart,
         increaseQuantity,
         decreaseQuantity,
+        checkout,
+        returnProduct,
       }}
     >
       {children}

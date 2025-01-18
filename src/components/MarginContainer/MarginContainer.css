@@ -1,0 +1,10 @@
+.margin__container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.margin__container-section {
+  max-width: 1000px;
+  width: 100%;
+}

@@ -1,0 +1,36 @@
+
+.returns__title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.returns__item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.returns__item p {
+  margin: 0;
+}
+
+.returns__item button {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  background: #f04e4e;
+  color: white;
+  border-radius: 5px;
+}
+
+.returns__item button:hover {
+  background: #d43f3f;
+}
+
+.returns__message {
+  font-size: 18px;
+  color: #888;
+}
