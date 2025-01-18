@@ -3,20 +3,21 @@ import Icon from "@mdi/react";
 import { mdiCar } from "@mdi/js";
 import "./Results.css";
 
-function Item({ product }) {
+function Item({ product, onAddToCart = () => null }) {
   const [quantity, setQuantity] = useState(1);
 
   const increaseQuantity = () => setQuantity(quantity + 1);
   const decreaseQuantity = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
 
   const handleAddToCart = () => {
-    alert(`Agregado al carrito: ${quantity}x ${name}`);
+    alert(`Agregado al carrito`);
+    onAddToCart(product, quantity);
   };
 
   return (
     <div className="item">
       {/* Imagen simulada */}
-      <div className="item__icon">
+      <div className="item__icon-small">
         <Icon path={mdiCar} size={3} color="#333" />
       </div>
 

@@ -8,6 +8,7 @@ export const PRODUCTS = [
     rating: 4.8,
     seller: "Meguiars",
     category: "Automotriz",
+    inStock: true,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const PRODUCTS = [
     rating: 4.6,
     seller: "Turtle Wax",
     category: "Automotriz",
+    inStock: true,
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const PRODUCTS = [
     rating: 4.7,
     seller: "Meguiars",
     category: "Automotriz",
+    inStock: true,
   },
   {
     id: 4,
@@ -38,5 +41,6 @@ export const PRODUCTS = [
     rating: 4.3,
     seller: "Armor All",
     category: "Automotriz",
+    inStock: true,
   },
 ];

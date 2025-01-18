@@ -1,11 +1,13 @@
 import { useSearchParams } from "react-router";
 import Header from "../../components/Header";
 import { PRODUCTS } from "../../common/data/products";
+import { useCartContext } from "../../app/context/CartContext";
 import Item from "./Item";
 
 function Results() {
   const [searchParams] = useSearchParams();
   const searchText = searchParams.get("query");
+  const { addToCart } = useCartContext();
 
   const filteredProducts = PRODUCTS.filter(
     (product) =>
@@ -28,7 +30,11 @@ function Results() {
               </p>
             ) : (
               filteredProducts.map((product) => (
-                <Item key={product.id} product={product} />
+                <Item
+                  key={product.id}
+                  product={product}
+                  onAddToCart={addToCart}
+                />
               ))
             )}
           </div>
