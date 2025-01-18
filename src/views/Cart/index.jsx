@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import Header from "../../components/Header";
 import { useCartContext } from "../../app/context/CartContext";
@@ -18,6 +19,16 @@ function Cart() {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
+
+  useEffect(() => {
+    if (cartItems.length > 0) {
+      console.log(1);
+      setTimeout(() => {
+        alert("Estás a un paso de adquirir tus productos");
+      }, 100);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
