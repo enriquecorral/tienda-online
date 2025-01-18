@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import Icon from "@mdi/react";
-import { mdiStorefrontOutline, mdiCartOutline, mdiMagnify } from "@mdi/js";
+import { mdiStorefrontOutline, mdiCartOutline } from "@mdi/js";
 import "./Header.css";
+import SearchBar from "../SearchBar";
 
 function Header() {
   const navigate = useNavigate();
@@ -30,20 +31,11 @@ function Header() {
       {/* Barra de búsqueda centrada */}
       <section className="header__section header__section--search">
         <div className="header__search-container">
-          <form onSubmit={handleSearch} className="header__search-form">
-            <input
-              className="header__search-input"
-              type="text"
-              placeholder="Buscar.."
-              name="search"
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
-              autoComplete="off"
-            />
-            <button className="header__search-button" type="submit">
-              <Icon path={mdiMagnify} size={1} color="gray" />
-            </button>
-          </form>
+          <SearchBar
+            handleSearch={handleSearch}
+            setSearchText={setSearchText}
+            searchText={searchText}
+          />
         </div>
       </section>
 
